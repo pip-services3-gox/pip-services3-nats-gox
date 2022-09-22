@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>queues - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.6";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package queues
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "queues"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#NatsAbstractMessageQueue">type NatsAbstractMessageQueue</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InheritNatsAbstractMessageQueue">func InheritNatsAbstractMessageQueue(overrides cqueues.IMessageQueueOverrides, name string, capabilities *cqueues.MessagingCapabilities) *NatsAbstractMessageQueue</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.Abandon">func (c *NatsAbstractMessageQueue) Abandon(ctx context.Context, message *cqueues.MessageEnvelope) (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.CheckOpen">func (c *NatsAbstractMessageQueue) CheckOpen(correlationId string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.Clear">func (c *NatsAbstractMessageQueue) Clear(ctx context.Context, correlationId string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.Close">func (c *NatsAbstractMessageQueue) Close(ctx context.Context, correlationId string) (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.Complete">func (c *NatsAbstractMessageQueue) Complete(ctx context.Context, message *cqueues.MessageEnvelope) (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.Configure">func (c *NatsAbstractMessageQueue) Configure(ctx context.Context, config *cconf.ConfigParams)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.FromMessage">func (c *NatsAbstractMessageQueue) FromMessage(message *cqueues.MessageEnvelope) (*nats.Msg, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.IsOpen">func (c *NatsAbstractMessageQueue) IsOpen() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.MoveToDeadLetter">func (c *NatsAbstractMessageQueue) MoveToDeadLetter(ctx context.Context, message *cqueues.MessageEnvelope) (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.Open">func (c *NatsAbstractMessageQueue) Open(ctx context.Context, correlationId string) (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.OpenWithParams">func (c *NatsAbstractMessageQueue) OpenWithParams(ctx context.Context, correlationId string, connections []*cconn.ConnectionParams, credential *cauth.CredentialParams) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.ReadMessageCount">func (c *NatsAbstractMessageQueue) ReadMessageCount() (int64, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.RenewLock">func (c *NatsAbstractMessageQueue) RenewLock(ctx context.Context, message *cqueues.MessageEnvelope, lockTimeout time.Duration) (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.Send">func (c *NatsAbstractMessageQueue) Send(ctx context.Context, correlationId string, envelop *cqueues.MessageEnvelope) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.SetReferences">func (c *NatsAbstractMessageQueue) SetReferences(ctx context.Context, references cref.IReferences)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.SubscriptionSubject">func (c *NatsAbstractMessageQueue) SubscriptionSubject() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.ToMessage">func (c *NatsAbstractMessageQueue) ToMessage(msg *nats.Msg) (*cqueues.MessageEnvelope, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsAbstractMessageQueue.UnsetReferences">func (c *NatsAbstractMessageQueue) UnsetReferences()</a></dd>
+				
+			
+				
+				<dd><a href="index.html#NatsBareMessageQueue">type NatsBareMessageQueue</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewNatsBareMessageQueue">func NewNatsBareMessageQueue(name string) *NatsBareMessageQueue</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsBareMessageQueue.EndListen">func (c *NatsBareMessageQueue) EndListen(ctx context.Context, correlationId string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsBareMessageQueue.Listen">func (c *NatsBareMessageQueue) Listen(ctx context.Context, correlationId string, receiver cqueues.IMessageReceiver) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsBareMessageQueue.Peek">func (c *NatsBareMessageQueue) Peek(ctx context.Context, correlationId string) (*cqueues.MessageEnvelope, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsBareMessageQueue.PeekBatch">func (c *NatsBareMessageQueue) PeekBatch(ctx context.Context, correlationId string, messageCount int64) ([]*cqueues.MessageEnvelope, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsBareMessageQueue.Receive">func (c *NatsBareMessageQueue) Receive(ctx context.Context, correlationId string, waitTimeout time.Duration) (*cqueues.MessageEnvelope, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#NatsMessageQueue">type NatsMessageQueue</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewNatsMessageQueue">func NewNatsMessageQueue(name string) *NatsMessageQueue</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.Clear">func (c *NatsMessageQueue) Clear(ctx context.Context, correlationId string) (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.Close">func (c *NatsMessageQueue) Close(ctx context.Context, correlationId string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.Configure">func (c *NatsMessageQueue) Configure(ctx context.Context, config *cconf.ConfigParams)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.EndListen">func (c *NatsMessageQueue) EndListen(ctx context.Context, correlationId string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.Listen">func (c *NatsMessageQueue) Listen(ctx context.Context, correlationId string, receiver cqueues.IMessageReceiver) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.OnMessage">func (c *NatsMessageQueue) OnMessage(msg *nats.Msg)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.Open">func (c *NatsMessageQueue) Open(ctx context.Context, correlationId string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.Peek">func (c *NatsMessageQueue) Peek(ctx context.Context, correlationId string) (*cqueues.MessageEnvelope, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.PeekBatch">func (c *NatsMessageQueue) PeekBatch(ctx context.Context, correlationId string, messageCount int64) ([]*cqueues.MessageEnvelope, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.ReadMessageCount">func (c *NatsMessageQueue) ReadMessageCount() (count int64, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NatsMessageQueue.Receive">func (c *NatsMessageQueue) Receive(ctx context.Context, correlationId string, waitTimeout time.Duration) (*cqueues.MessageEnvelope, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go">NatsAbstractMessageQueue.go</a>
+			
+				<a href="http://localhost:6060/src/queues/NatsBareMessageQueue.go">NatsBareMessageQueue.go</a>
+			
+				<a href="http://localhost:6060/src/queues/NatsMessageQueue.go">NatsMessageQueue.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="NatsAbstractMessageQueue">type <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=815:1356#L11">NatsAbstractMessageQueue</a>
+				<a class="permalink" href="index.html#NatsAbstractMessageQueue">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Abstract NATS message queue with ability to connect to NATS server.
+</p>
+
+			<pre>type NatsAbstractMessageQueue struct {
+    *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageQueue">MessageQueue</a>
+
+    <span class="comment">//The dependency resolver.</span>
+<span id="NatsAbstractMessageQueue.DependencyResolver"></span>    DependencyResolver *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/">cref</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/#DependencyResolver">DependencyResolver</a>
+    <span class="comment">//The logger.</span>
+<span id="NatsAbstractMessageQueue.Logger"></span>    Logger *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/log/">clog</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/log/#CompositeLogger">CompositeLogger</a>
+    <span class="comment">//The NATS connection component.</span>
+<span id="NatsAbstractMessageQueue.Connection"></span>    Connection *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-nats-gox/connect/">connect</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-nats-gox/connect/#NatsConnection">NatsConnection</a>
+    <span class="comment">//The NATS connection object.</span>
+<span id="NatsAbstractMessageQueue.Client"></span>    Client *nats.<a href="index.html#Conn">Conn</a>
+
+    <span class="comment">// SerializeEnvelop bool</span>
+<span id="NatsAbstractMessageQueue.Subject"></span>    Subject    <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="NatsAbstractMessageQueue.QueueGroup"></span>    QueueGroup <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="InheritNatsAbstractMessageQueue">func <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=1488:1650#L37">InheritNatsAbstractMessageQueue</a>
+					<a class="permalink" href="index.html#InheritNatsAbstractMessageQueue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func InheritNatsAbstractMessageQueue(overrides <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#IMessageQueueOverrides">IMessageQueueOverrides</a>, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, capabilities *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessagingCapabilities">MessagingCapabilities</a>) *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a></pre>
+				<p>
+Creates a new instance of the queue component.
+</p>
+<pre>- overrides a queue overrides
+- name    (optional) a queue name.
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="NatsAbstractMessageQueue.Abandon">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=12396:12505#L365">Abandon</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.Abandon">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) Abandon(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, message *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>) (err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Abandon method are returnes message into the queue and makes it available for all subscribers to receive it again.
+This method is usually used to return a message which could not be processed at the moment
+to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
+or/and send to dead letter queue.
+Important: This method is not supported by NATS.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- message *cqueues.MessageEnvelope  a message to return.
+</pre>
+<p>
+Returns: error
+</p>
+<pre>error or nil for success.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.CheckOpen">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=6701:6773#L196">CheckOpen</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.CheckOpen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) CheckOpen(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.Clear">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=9196:9285#L282">Clear</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.Clear">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) Clear(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Clear method are clears component state.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId 	string (optional) transaction id to trace execution through call chain.
+</pre>
+<p>
+Returns error or nil no errors occured.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.Close">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=6236:6331#L173">Close</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.Close">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) Close(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Closes component and frees used resources.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId 	(optional) transaction id to trace execution through call chain.
+	- Returns 			error or nil no errors occured.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.Complete">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=11670:11780#L350">Complete</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.Complete">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) Complete(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, message *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>) (err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Complete method are permanently removes a message from the queue.
+This method is usually used to remove the message after successful processing.
+Important: This method is not supported by NATS.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- message  *cqueues.MessageEnvelope a message to remove.
+</pre>
+<p>
+Returns: error
+error or nil for success.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.Configure">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=2444:2537#L61">Configure</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.Configure">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) Configure(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, config *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/">cconf</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/#ConfigParams">ConfigParams</a>)</pre>
+				<p>
+Configures component by passing configuration parameters.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- config    configuration parameters to be set.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.FromMessage">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=7241:7340#L219">FromMessage</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.FromMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) FromMessage(message *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>) (*nats.<a href="index.html#Msg">Msg</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Converts MessageEnvelope to NATs message structure
+</p>
+<pre>Parameters:
+	- message *cqueues.MessageEnvelope message object
+</pre>
+<p>
+Returns: NATs message structure
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.IsOpen">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=4371:4419#L115">IsOpen</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.IsOpen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) IsOpen() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if the component is opened.
+Returns true if the component has been opened and false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.MoveToDeadLetter">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=12860:12978#L377">MoveToDeadLetter</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.MoveToDeadLetter">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) MoveToDeadLetter(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, message *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>) (err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Permanently removes a message from the queue and sends it to dead letter queue.
+Important: This method is not supported by NATS.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- message  *cqueues.MessageEnvelope a message to be removed.
+</pre>
+<p>
+Returns: error
+</p>
+<pre>error or nil for success.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.Open">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=4670:4764#L124">Open</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) Open(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Opens the component.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId 	(optional) transaction id to trace execution through call chain.
+	- Returns 			 error or nil no errors occured.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.OpenWithParams">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=5782:5957#L163">OpenWithParams</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.OpenWithParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) OpenWithParams(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, connections []*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/connect/">cconn</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/connect/#ConnectionParams">ConnectionParams</a>,
+    credential *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/auth/">cauth</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/auth/#CredentialParams">CredentialParams</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+OpenWithParams method are opens the component with given connection and credential parameters.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId     (optional) transaction id to trace execution through call chain.
+	- connections        connection parameters
+	- credential        credential parameters
+</pre>
+<p>
+Returns error or nil no errors occured.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.ReadMessageCount">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=9466:9534#L289">ReadMessageCount</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.ReadMessageCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) ReadMessageCount() (<a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ReadMessageCount method are reads the current number of messages in the queue to be delivered.
+Returns number of messages or error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.RenewLock">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=11113:11251#L337">RenewLock</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.RenewLock">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) RenewLock(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, message *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>, lockTimeout <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a>) (err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+RenewLock method are renews a lock on a message that makes it invisible from other receivers in the queue.
+This method is usually used to extend the message processing time.
+Important: This method is not supported by NATS.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- message   *cqueues.MessageEnvelope    a message to extend its lock.
+	- lockTimeout  time.Duration  a locking timeout in milliseconds.
+</pre>
+<p>
+Returns: error
+receives an error or nil for success.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.Send">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=9898:10020#L300">Send</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.Send">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) Send(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, envelop *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Send method are sends a message into the queue.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId string    (optional) transaction id to trace execution through call chain.
+	- envelope *cqueues.MessageEnvelope  a message envelop to be sent.
+</pre>
+<p>
+Returns: error or nil for success.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.SetReferences">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=3219:3317#L78">SetReferences</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.SetReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) SetReferences(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, references <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/">cref</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/#IReferences">IReferences</a>)</pre>
+				<p>
+Sets references to dependent components.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- references 	references to locate the component dependencies.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.SubscriptionSubject">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=6942:7005#L208">SubscriptionSubject</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.SubscriptionSubject">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) SubscriptionSubject() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.ToMessage">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=8171:8264#L252">ToMessage</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.ToMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) ToMessage(msg *nats.<a href="index.html#Msg">Msg</a>) (*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Converts NATs structure to MessageEnvelope
+</p>
+<pre>Parameters:
+	- msg *nats.Msg message object
+</pre>
+<p>
+Returns: MessageEnvelope structure
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsAbstractMessageQueue.UnsetReferences">func (*NatsAbstractMessageQueue) <a href="http://localhost:6060/src/queues/NatsAbstractMessageQueue.go?s=3851:3903#L98">UnsetReferences</a>
+					<a class="permalink" href="index.html#NatsAbstractMessageQueue.UnsetReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>) UnsetReferences()</pre>
+				<p>
+Unsets (clears) previously set references to dependent components.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="NatsBareMessageQueue">type <a href="http://localhost:6060/src/queues/NatsBareMessageQueue.go?s=2727:2826#L56">NatsBareMessageQueue</a>
+				<a class="permalink" href="index.html#NatsBareMessageQueue">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+NatsBareMessageQueue are message queue that sends and receives messages via NATS message broker.
+</p>
+<pre>Configuration parameters:
+
+	- subject:                       name of NATS topic (subject) to subscribe
+	- queue_group:                   name of NATS queue group
+	- connection(s):
+		- discovery_key:               (optional) a key to retrieve the connection from  IDiscovery
+		- host:                        host name or IP address
+		- port:                        port number
+		- uri:                         resource URI or connection string with all parameters in it
+	- credential(s):
+		- store_key:                   (optional) a key to retrieve the credentials from  ICredentialStore
+		- username:                    user name
+		- password:                    user password
+	- options:
+		- serialize_message:    (optional) true to serialize entire message as JSON, false to send only message payload (default: true)
+		- retry_connect:        (optional) turns on/off automated reconnect when connection is log (default: true)
+		- max_reconnect:        (optional) maximum reconnection attempts (default: 3)
+		- reconnect_timeout:    (optional) number of milliseconds to wait on each reconnection attempt (default: 3000)
+		- flush_timeout:        (optional) number of milliseconds to wait on flushing messages (default: 3000)
+
+References:
+
+	- *:logger:*:*:1.0             (optional)  ILogger components to pass log messages
+	- *:counters:*:*:1.0           (optional)  ICounters components to pass collected measurements
+	- *:discovery:*:*:1.0          (optional)  IDiscovery services to resolve connections
+	- *:credential-store:*:*:1.0   (optional) Credential stores to resolve credentials
+	- *:connection:nats:*:1.0      (optional) Shared connection to NATS service
+</pre>
+<p>
+See MessageQueue
+See MessagingCapabilities
+</p>
+<pre>	Example:
+		ctx := context.Background()
+		queue := NewNatsBareMessageQueue(&#34;myqueue&#34;)
+		queue.Configure(ctx, cconf.NewConfigParamsFromTuples(
+			&#34;subject&#34;, &#34;mytopic&#34;,
+			&#34;queue_group&#34;, &#34;mygroup&#34;,
+			&#34;connection.protocol&#34;, &#34;nats&#34;
+			&#34;connection.host&#34;, &#34;localhost&#34;
+			&#34;connection.port&#34;, 1883
+		))
+
+		_ = queue.Open(ctx, &#34;123&#34;)
+
+   	_ = queue.Send(ctx, &#34;123&#34;, NewMessageEnvelope(&#34;&#34;, &#34;mymessage&#34;, &#34;ABC&#34;))
+
+   	message, err := queue.Receive(ctx, &#34;123&#34;, 10000*time.Milliseconds)
+	  	if (message != nil) {
+	  		...
+	  		queue.Complete(ctx, message);
+	  	}
+</pre>
+
+			<pre>type NatsBareMessageQueue struct {
+    *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewNatsBareMessageQueue">func <a href="http://localhost:6060/src/queues/NatsBareMessageQueue.go?s=2969:3032#L64">NewNatsBareMessageQueue</a>
+					<a class="permalink" href="index.html#NewNatsBareMessageQueue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewNatsBareMessageQueue(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#NatsBareMessageQueue">NatsBareMessageQueue</a></pre>
+				<p>
+NewNatsBareMessageQueue are creates a new instance of the message queue.
+Parameters:
+</p>
+<pre>- name  string (optional) a queue name.
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="NatsBareMessageQueue.EndListen">func (*NatsBareMessageQueue) <a href="http://localhost:6060/src/queues/NatsBareMessageQueue.go?s=8207:8290#L207">EndListen</a>
+					<a class="permalink" href="index.html#NatsBareMessageQueue.EndListen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsBareMessageQueue">NatsBareMessageQueue</a>) EndListen(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+EndListen method are ends listening for incoming messages.
+When this method is call listen unblocks the thread and execution continues.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId  string   (optional) transaction id to trace execution through call chain.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsBareMessageQueue.Listen">func (*NatsBareMessageQueue) <a href="http://localhost:6060/src/queues/NatsBareMessageQueue.go?s=7392:7513#L184">Listen</a>
+					<a class="permalink" href="index.html#NatsBareMessageQueue.Listen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsBareMessageQueue">NatsBareMessageQueue</a>) Listen(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, receiver <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#IMessageReceiver">IMessageReceiver</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Listens for incoming messages and blocks the current thread until queue is closed.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId   string  (optional) transaction id to trace execution through call chain.
+	- receiver    cqueues.IMessageReceiver      a receiver to receive incoming messages.
+</pre>
+<p>
+See IMessageReceiver
+See receive
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsBareMessageQueue.Peek">func (*NatsBareMessageQueue) <a href="http://localhost:6060/src/queues/NatsBareMessageQueue.go?s=3644:3756#L78">Peek</a>
+					<a class="permalink" href="index.html#NatsBareMessageQueue.Peek">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsBareMessageQueue">NatsBareMessageQueue</a>) Peek(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Peek method are peeks a single incoming message from the queue without removing it.
+If there are no messages available in the queue it returns nil.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId  string  (optional) transaction id to trace execution through call chain.
+</pre>
+<p>
+Returns: result *cqueues.MessageEnvelope, err error
+message or error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsBareMessageQueue.PeekBatch">func (*NatsBareMessageQueue) <a href="http://localhost:6060/src/queues/NatsBareMessageQueue.go?s=4328:4467#L91">PeekBatch</a>
+					<a class="permalink" href="index.html#NatsBareMessageQueue.PeekBatch">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsBareMessageQueue">NatsBareMessageQueue</a>) PeekBatch(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, messageCount <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) ([]*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+PeekBatch method are peeks multiple incoming messages from the queue without removing them.
+If there are no messages available in the queue it returns an empty list.
+Important: This method is not supported by NATS.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId     (optional) transaction id to trace execution through call chain.
+	- messageCount      a maximum number of messages to peek.
+</pre>
+<p>
+Returns:          callback function that receives a list with messages or error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsBareMessageQueue.Receive">func (*NatsBareMessageQueue) <a href="http://localhost:6060/src/queues/NatsBareMessageQueue.go?s=4964:5106#L103">Receive</a>
+					<a class="permalink" href="index.html#NatsBareMessageQueue.Receive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsBareMessageQueue">NatsBareMessageQueue</a>) Receive(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, waitTimeout <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a>) (*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Receive method are receives an incoming message and removes it from the queue.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId   string   (optional) transaction id to trace execution through call chain.
+	- waitTimeout  time.Duration     a timeout in milliseconds to wait for a message to come.
+</pre>
+<p>
+Returns:  result *cqueues.MessageEnvelope, err error
+receives a message or error.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="NatsMessageQueue">type <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=2875:3064#L59">NatsMessageQueue</a>
+				<a class="permalink" href="index.html#NatsMessageQueue">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type NatsMessageQueue struct {
+    *<a href="index.html#NatsAbstractMessageQueue">NatsAbstractMessageQueue</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewNatsMessageQueue">func <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=3247:3302#L72">NewNatsMessageQueue</a>
+					<a class="permalink" href="index.html#NewNatsMessageQueue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewNatsMessageQueue(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a></pre>
+				<p>
+NewNatsMessageQueue are creates a new instance of the message queue.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- name  string (optional) a queue name.
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="NatsMessageQueue.Clear">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=6166:6253#L173">Clear</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.Clear">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) Clear(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Clear method are clears component state.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId 	string (optional) transaction id to trace execution through call chain.
+</pre>
+<p>
+Returns error or nil no errors occured.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.Close">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=4928:5009#L125">Close</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.Close">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) Close(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Close method are Closes component and frees used resources.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId string 	(optional) transaction id to trace execution through call chain.
+</pre>
+<p>
+Returns error or nil no errors occured.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.Configure">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=3750:3835#L87">Configure</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.Configure">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) Configure(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, config *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/">cconf</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/#ConfigParams">ConfigParams</a>)</pre>
+				<p>
+Configures component by passing configuration parameters.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- config    configuration parameters to be set.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.EndListen">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=12926:13005#L392">EndListen</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.EndListen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) EndListen(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+EndListen method are ends listening for incoming messages.
+When this method is call listen unblocks the thread and execution continues.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId  string   (optional) transaction id to trace execution through call chain.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.Listen">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=11876:11993#L354">Listen</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.Listen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) Listen(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, receiver <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#IMessageReceiver">IMessageReceiver</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Listens for incoming messages and blocks the current thread until queue is closed.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId   string  (optional) transaction id to trace execution through call chain.
+	- receiver    cqueues.IMessageReceiver      a receiver to receive incoming messages.
+</pre>
+<p>
+See IMessageReceiver
+See receive
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.OnMessage">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=10249:10300#L308">OnMessage</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.OnMessage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) OnMessage(msg *nats.<a href="index.html#Msg">Msg</a>)</pre>
+				<p>
+Function thath process incoming messages
+</p>
+<pre>Parameters:
+	- msg *nats.Msg	message from the NATs
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.Open">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=4259:4339#L98">Open</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) Open(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Opens the component with given connection and credential parameters.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId     (optional) transaction id to trace execution through call chain.
+</pre>
+<p>
+Returns error or nil no errors occured.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.Peek">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=7095:7203#L200">Peek</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.Peek">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) Peek(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Peek method are peeks a single incoming message from the queue without removing it.
+If there are no messages available in the queue it returns nil.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId  string  (optional) transaction id to trace execution through call chain.
+</pre>
+<p>
+Returns: result *cqueues.MessageEnvelope, err error
+message or error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.PeekBatch">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=8201:8336#L236">PeekBatch</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.PeekBatch">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) PeekBatch(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, messageCount <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) ([]*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+PeekBatch method are peeks multiple incoming messages from the queue without removing them.
+If there are no messages available in the queue it returns an empty list.
+Important: This method is not supported by NATS.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId     (optional) transaction id to trace execution through call chain.
+	- messageCount      a maximum number of messages to peek.
+</pre>
+<p>
+Returns:          receives a list with messages or error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.ReadMessageCount">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=6529:6599#L185">ReadMessageCount</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.ReadMessageCount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) ReadMessageCount() (count <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ReadMessageCount method are reads the current number of messages in the queue to be delivered.
+Returns number of messages or error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="NatsMessageQueue.Receive">func (*NatsMessageQueue) <a href="http://localhost:6060/src/queues/NatsMessageQueue.go?s=9268:9406#L268">Receive</a>
+					<a class="permalink" href="index.html#NatsMessageQueue.Receive">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NatsMessageQueue">NatsMessageQueue</a>) Receive(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, waitTimeout <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a>) (*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/">cqueues</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-messaging-gox/queues/#MessageEnvelope">MessageEnvelope</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Receive method are receives an incoming message and removes it from the queue.
+</p>
+<pre>Parameters:
+	- ctx context.Context	operation context
+	- correlationId   string   (optional) transaction id to trace execution through call chain.
+	- waitTimeout  time.Duration     a timeout in milliseconds to wait for a message to come.
+</pre>
+<p>
+Returns:  result *cqueues.MessageEnvelope, err error
+receives a message or error.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.6.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
