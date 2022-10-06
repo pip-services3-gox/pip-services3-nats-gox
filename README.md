@@ -4,17 +4,17 @@ This library is a part of [Pip.Services](https://github.com/pip-services/pip-ser
 The Nats module contains a set of components for working with the message queue via NATS server [https://nats.io/](https://nats.io/).
 
 The module contains the following packages:
-- [**Build**](https://godoc.org/github.com/pip-services3-gox/pip-services3-nats-gox/build) - Factory for constructing module components
-- [**Connect**](https://godoc.org/github.com/pip-services3-gox/pip-services3-nats-gox/connect) - Components for creating and configuring a connection with Nats
-- [**Queues**](https://godoc.org/github.com/pip-services3-gox/pip-services3-nats-gox/queues) - Message Queuing components that implement the standard [Messaging](https://github.com/pip-services3-gox/pip-services3-messaging-gox) module interface
+- **Build** - Factory for constructing module components
+- **Connect** - Components for creating and configuring a connection with Nats
+- **Queues** - Message Queuing components that implement the standard [Messaging](https://github.com/pip-services3-gox/pip-services3-messaging-gox) module interface
 
 <a name="links"></a> Quick links:
 
-* [Configuration](https://www.pipservices.org/recipies/configuration)
+* [Configuration](http://docs.pipservices.org/concepts/configuration/)
 * [API Reference](https://godoc.org/github.com/pip-services3-gox/pip-services3-nats-gox/)
 * [Change Log](CHANGELOG.md)
-* [Get Help](https://www.pipservices.org/community/help)
-* [Contribute](https://www.pipservices.org/community/contribute)
+* [Get Help](http://docs.pipservices.org/get_help/)
+* [Contribute](http://docs.pipservices.org/contribute/)
 
 ## Use
 
